@@ -1,0 +1,5 @@
+project_name: 'Math Puzzle Generator'
+project_description: 'Generates random math puzzles for educational purposes.'
+pipeline_slug: 'math-puzzle-generator'
+
+aineko_version: 0.2.5
