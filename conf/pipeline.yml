@@ -1,0 +1,15 @@
+pipeline:
+  name: math-puzzle-generator
+
+  default_node_settings:
+    num_cpus: 0.5
+
+  nodes:
+    math_puzzle_generator:
+      class: my_math_puzzle.nodes.MathPuzzleNode
+      outputs:
+        - math_puzzle
+
+  datasets:
+    math_puzzle:
+      type: kafka_stream
