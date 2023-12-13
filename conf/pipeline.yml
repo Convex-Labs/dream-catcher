@@ -1,0 +1,21 @@
+pipeline:
+  name: twitter-trend-analyzer
+
+  nodes:
+    TwitterScraper:
+      class: twitter_trend_analyzer.nodes.TwitterScraperNode
+      outputs:
+        - trends_data
+
+    TrendIdentifier:
+      class: twitter_trend_analyzer.nodes.TrendIdentifierNode
+      inputs:
+        - trends_data
+      outputs:
+        - identified_trends
+
+  datasets:
+    trends_data:
+      type: kafka_stream
+    identified_trends:
+      type: kafka_stream
