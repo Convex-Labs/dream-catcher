@@ -1,0 +1,4 @@
+project_name: 'Number Doubler'
+project_description: 'A pipeline that generates a sequence of numbers and doubles each number.'
+pipeline_slug: 'number-sequence-doubler'
+aineko_version: 0.2.5
