@@ -1,0 +1,5 @@
+project_name: "Number Sequencer"
+project_description: "Generates a sequence of numbers and doubles them."
+pipeline_slug: "number-sequence-pipeline"
+
+aineko_version: 0.2.5
