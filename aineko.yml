@@ -1,0 +1,5 @@
+project_name: Cool Math Solver
+project_description: A pipeline that solves a cool math problem.
+pipeline_slug: cool-math-solver
+
+aineko_version: 0.2.5
