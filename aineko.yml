@@ -1,0 +1,5 @@
+project_name: "Number Processor"
+project_description: "Generates a sequence of numbers and doubles each number."
+pipeline_slug: "number-processing-pipeline"
+
+aineko_version: 0.2.5
