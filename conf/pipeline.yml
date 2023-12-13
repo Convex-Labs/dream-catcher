@@ -1,0 +1,27 @@
+pipeline:
+  name: number-sequence-pipeline
+
+  default_node_settings:
+    num_cpus: 0.1
+
+  nodes:
+    number_generator:
+      class: my_awesome_pipeline.nodes.NumberGeneratorNode
+      outputs:
+        - sequence
+      node_params:
+        start: 1
+        end: 100
+
+    number_doubler:
+      class: my_awesome_pipeline.nodes.NumberDoublerNode
+      inputs:
+        - sequence
+      outputs:
+        - doubled_sequence
+
+  datasets:
+    sequence:
+      type: kafka_stream
+    doubled_sequence:
+      type: kafka_stream
