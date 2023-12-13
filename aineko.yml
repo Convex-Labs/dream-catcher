@@ -1,0 +1,5 @@
+project_name: 'HelloWorld'
+project_description: 'A simple Aineko pipeline that logs Hello, World! to the console.'
+pipeline_slug: 'hello-world-pipeline'
+
+aineko_version: 0.2.5
