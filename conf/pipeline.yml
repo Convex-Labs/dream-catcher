@@ -1,0 +1,18 @@
+pipeline:
+  name: cool-math-problem-solver
+
+  default_node_settings:
+    num_cpus: 0.5
+
+  nodes:
+    MathProblemSolver:
+      class: my_cool_math_pipeline.nodes.CoolMathProblemSolver
+      outputs:
+        - math_solution
+      node_params:
+        problem: "2 + 2"
+
+  datasets:
+    math_solution:
+      type: kafka_stream
+
