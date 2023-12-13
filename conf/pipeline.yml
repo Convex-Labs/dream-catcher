@@ -1,0 +1,10 @@
+pipeline:
+  name: hello-world-pipeline
+
+  nodes:
+    HelloWorld:
+      class: my_hello_world_pipeline.nodes.HelloWorldNode
+      # This node does not have inputs or outputs as it's a simple log operation
+
+  datasets:
+    # No datasets are required for this pipeline as there are no data dependencies
