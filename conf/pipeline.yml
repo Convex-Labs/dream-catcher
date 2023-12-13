@@ -1,0 +1,24 @@
+pipeline:
+  name: twitter-trend-scraper
+
+  nodes:
+    TwitterScraper:
+      class: twitter-trend-analyzer.nodes.TwitterScraperNode
+      outputs:
+        - scraped_tweets
+      node_params:
+        query: '#trending'
+        count: 100
+
+    TrendIdentifier:
+      class: twitter-trend-analyzer.nodes.TrendIdentifierNode
+      inputs:
+        - scraped_tweets
+      outputs:
+        - identified_trends
+
+  datasets:
+    scraped_tweets:
+      type: kafka_stream
+    identified_trends:
+      type: kafka_stream
