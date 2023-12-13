@@ -1,0 +1,5 @@
+project_name: Twitter Trend Analyzer
+project_slug: twitter_trend_analyzer
+project_description: A pipeline that scrapes Twitter data to identify trends.
+pipeline_slug: twitter-trend-analyzer
+aineko_version: 0.2.5
