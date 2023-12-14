@@ -1,0 +1,6 @@
+pipeline:
+  name: hello_world_pipeline
+  nodes:
+    hello_world_node:
+      class: hello_world.nodes.HelloWorldNode
+      num_cpus: 0.1
