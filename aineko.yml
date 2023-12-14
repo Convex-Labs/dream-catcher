@@ -1,0 +1,5 @@
+project_name: MathSolver
+project_slug: math_solver
+project_description: A pipeline that solves an interesting math problem using 3 nodes.
+pipeline_slug: math_solver_pipeline
+aineko_version: 0.2.6
