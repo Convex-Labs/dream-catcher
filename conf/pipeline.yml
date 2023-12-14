@@ -1,0 +1,26 @@
+pipeline:
+  name: log_simulator_pipeline
+
+  default_node_settings:
+    num_cpus: 0.1
+
+  nodes:
+    LogGenerator:
+      class: log_simulator.nodes.LogGeneratorNode
+      outputs:
+        - log_stream
+      node_params:
+        interval: 2
+
+    LogProcessor:
+      class: log_simulator.nodes.LogProcessorNode
+      inputs:
+        - log_stream
+      outputs:
+        - processed_log_stream
+
+  datasets:
+    log_stream:
+      type: kafka_stream
+    processed_log_stream:
+      type: kafka_stream
