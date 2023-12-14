@@ -1,0 +1,25 @@
+pipeline:
+  name: inventory_management_pipeline
+
+  default_node_settings:
+    num_cpus: 0.5
+
+  nodes:
+    InventorySimulator:
+      class: inventory_manager.nodes.InventorySimulator
+      outputs:
+        - inventory_updates
+      node_params:
+        initial_inventory:
+          apples: 100
+          oranges: 150
+          bananas: 200
+
+    InventoryLogger:
+      class: inventory_manager.nodes.InventoryLogger
+      inputs:
+        - inventory_updates
+
+  datasets:
+    inventory_updates:
+      type: kafka_stream
