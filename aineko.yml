@@ -1,0 +1,7 @@
+---
+project_name: Cat Motivator
+project_slug: cat_motivator
+project_description: Generates cat-themed motivational messages every 3 seconds.
+pipeline_slug: cat-motivator-pipeline
+
+aineko_version: 0.2.6
