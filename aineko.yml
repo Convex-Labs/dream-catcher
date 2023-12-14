@@ -1,0 +1,7 @@
+---
+project_name: API Load Tester
+project_slug: api_load_tester
+project_description: Simulates load testing on a specified API endpoint.
+pipeline_slug: api-load-testing-pipeline
+
+aineko_version: 0.2.6
