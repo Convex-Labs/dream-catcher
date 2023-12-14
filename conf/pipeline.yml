@@ -1,0 +1,24 @@
+pipeline:
+  name: api-load-testing-pipeline
+
+  default_node_settings:
+    num_cpus: 0.5
+
+  nodes:
+    load_tester:
+      class: api_load_tester.nodes.APILoadTester
+      outputs:
+        - poison_pill
+      node_params:
+        api_endpoint: 'https://example.com/api'
+        request_method: 'GET'
+        request_data: {}
+        request_headers: {}
+        total_requests: 1000
+        time_between_requests: 0.1
+        timeout: 5
+
+  datasets:
+    poison_pill:
+      type: kafka_stream
+
