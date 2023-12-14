@@ -1,0 +1,5 @@
+project_name: SecureCoolDataStream
+project_slug: secure_cool_data_stream
+project_description: A pipeline that processes a simulated data stream securely in a cool way.
+pipeline_slug: secure-cool-data-stream-pipeline
+aineko_version: 0.2.6
