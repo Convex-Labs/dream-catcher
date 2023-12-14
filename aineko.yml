@@ -1,0 +1,5 @@
+project_name: Some Pipeline
+project_slug: some_pipeline
+project_description: A simple Aineko pipeline for processing data.
+pipeline_slug: some-pipeline
+aineko_version: 0.2.6
