@@ -1,0 +1,5 @@
+project_name: RandomPipeline
+project_slug: random_pipeline
+project_description: A pipeline that processes random data.
+pipeline_slug: random-pipeline
+aineko_version: 0.2.6
