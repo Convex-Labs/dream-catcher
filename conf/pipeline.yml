@@ -1,0 +1,16 @@
+pipeline:
+  name: cat-motivator-pipeline
+
+  default_node_settings:
+    num_cpus: 0.1
+
+  nodes:
+    cat_motivator:
+      class: cat_motivator.nodes.CatMotivatorNode
+      outputs:
+        - cat_motivation
+      node_params: {}
+
+  datasets:
+    cat_motivation:
+      type: kafka_stream
