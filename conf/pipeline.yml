@@ -1,0 +1,26 @@
+pipeline:
+  name: secure-cool-data-stream-pipeline
+
+  default_node_settings:
+    num_cpus: 0.5
+
+  nodes:
+    SecureDataSimulator:
+      class: secure_cool_data_stream.nodes.SecureDataSimulatorNode
+      outputs:
+        - secure_simulated_data_stream
+      node_params:
+        data_range: [0, 100]
+
+    CoolProcessor:
+      class: secure_cool_data_stream.nodes.CoolProcessorNode
+      inputs:
+        - secure_simulated_data_stream
+      outputs:
+        - cool_data_stream
+
+  datasets:
+    secure_simulated_data_stream:
+      type: kafka_stream
+    cool_data_stream:
+      type: kafka_stream
