@@ -1,0 +1,5 @@
+project_name: Fibonacci Processor
+project_slug: fibonacci_processor
+project_description: Processes a Fibonacci sequence.
+pipeline_slug: fibonacci-sequence-pipeline
+aineko_version: 0.2.6
