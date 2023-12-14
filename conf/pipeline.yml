@@ -1,0 +1,19 @@
+pipeline:
+  name: api-load-testing-pipeline
+
+  default_node_settings:
+    num_cpus: 1
+
+  nodes:
+    load_tester:
+      class: api_load_tester.nodes.APILoadTester
+      node_params:
+        api_endpoint: 'https://example.com/api'
+        request_method: 'GET'
+        total_requests: 1000
+        concurrency_level: 10
+        throttle_seconds: 0.1
+        timeout_seconds: 5  # Added timeout parameter
+
+  datasets:
+    # No datasets are required for this pipeline as it's a standalone load test
