@@ -1,0 +1,22 @@
+pipeline:
+  name: some-pipeline
+
+  default_node_settings:
+    num_cpus: 1
+
+  nodes:
+    data_processor:
+      class: some_pipeline.nodes.DataProcessorNode
+      inputs:
+        - input_dataset
+      outputs:
+        - output_dataset
+      node_params:
+        param1: 'value1'
+        param2: 'value2'
+
+  datasets:
+    input_dataset:
+      type: kafka_stream
+    output_dataset:
+      type: kafka_stream
