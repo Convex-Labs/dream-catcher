@@ -1,0 +1,20 @@
+pipeline:
+  name: api-load-tester-pipeline
+
+  default_node_settings:
+    num_cpus: 0.5
+
+  nodes:
+    load_tester:
+      class: api_load_tester.nodes.APILoadTester
+      outputs:
+        - api_responses
+      node_params:
+        api_url: 'http://example.com/api'
+        request_count: 100
+        request_interval: 1
+        timeout: 5
+
+  datasets:
+    api_responses:
+      type: kafka_stream
