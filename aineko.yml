@@ -1,0 +1,5 @@
+project_name: HelloWorld
+project_slug: hello_world
+project_description: A simple Hello World pipeline using Aineko framework.
+pipeline_slug: hello_world_pipeline
+aineko_version: 0.2.5
