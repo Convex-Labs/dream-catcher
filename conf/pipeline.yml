@@ -1,0 +1,31 @@
+pipeline:
+  name: math_solver_pipeline
+
+  nodes:
+    number_generator:
+      class: math_solver.nodes.NumberGeneratorNode
+      outputs:
+        - generated_number
+      node_params:
+        start_number: 42
+
+    math_operation:
+      class: math_solver.nodes.MathOperationNode
+      inputs:
+        - generated_number
+      outputs:
+        - operation_result
+      node_params:
+        operation: !!python/name:math.pow
+        exponent: 2
+
+    result_collector:
+      class: math_solver.nodes.ResultCollectorNode
+      inputs:
+        - operation_result
+
+  datasets:
+    generated_number:
+      type: kafka_stream
+    operation_result:
+      type: kafka_stream
