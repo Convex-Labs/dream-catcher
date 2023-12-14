@@ -1,0 +1,9 @@
+pipeline:
+  name: hello-world-logger-pipeline
+
+  nodes:
+    hello_world_logger:
+      class: hello_world_logger.nodes.HelloWorldLoggerNode
+      num_cpus: 0.1
+
+  datasets: {}
