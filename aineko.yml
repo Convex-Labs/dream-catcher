@@ -1,0 +1,5 @@
+project_name: Inventory Manager
+project_slug: inventory_manager
+project_description: Manages inventory using simulated data on inventory updates
+pipeline_slug: inventory_management_pipeline
+aineko_version: 0.2.6
