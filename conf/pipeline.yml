@@ -1,0 +1,13 @@
+pipeline:
+  name: hello_world_pipeline
+
+  default_node_settings:
+    num_cpus: 0.1
+
+  nodes:
+    hello_world_node:
+      class: hello_world.nodes.HelloWorldNode
+      num_cpus: 0.1
+
+  datasets:
+    # No datasets are required for this simple pipeline
