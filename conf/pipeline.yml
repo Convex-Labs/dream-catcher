@@ -1,0 +1,22 @@
+pipeline:
+  name: fibonacci-sequence-pipeline
+
+  default_node_settings:
+    num_cpus: 0.1
+
+  nodes:
+    fibonacci_producer:
+      class: fibonacci_generator.nodes.FibonacciProducer
+      outputs:
+        - fibonacci_output
+
+    fibonacci_consumer:
+      class: fibonacci_generator.nodes.FibonacciConsumer
+      inputs:
+        - fibonacci_input
+
+  datasets:
+    fibonacci_output:
+      type: kafka_stream
+    fibonacci_input:
+      type: kafka_stream
