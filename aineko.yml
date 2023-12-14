@@ -1,0 +1,5 @@
+project_name: LogSimulator
+project_slug: log_simulator
+project_description: Simulates machine logs and processes them.
+pipeline_slug: log_simulator_pipeline
+aineko_version: 0.2.6
