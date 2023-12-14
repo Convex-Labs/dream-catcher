@@ -1,0 +1,20 @@
+pipeline:
+  name: random-pipeline
+
+  default_node_settings:
+    num_cpus: 0.5
+
+  nodes:
+    RandomNumberGenerator:
+      class: random_pipeline.nodes.RandomNumberGenerator
+      outputs:
+        - random_numbers
+
+    RandomNumberPrinter:
+      class: random_pipeline.nodes.RandomNumberPrinter
+      inputs:
+        - random_numbers
+
+  datasets:
+    random_numbers:
+      type: kafka_stream
