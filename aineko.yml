@@ -1,0 +1,5 @@
+project_name: Fibonacci Generator
+project_slug: fibonacci_generator
+project_description: Generates a Fibonacci sequence using two nodes in a pipeline.
+pipeline_slug: fibonacci-sequence-generator
+aineko_version: 0.2.6
