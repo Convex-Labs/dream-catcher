@@ -1,0 +1,21 @@
+pipeline:
+  name: data_processor_pipeline
+
+  default_node_settings:
+    num_cpus: 0.5
+
+  nodes:
+    DataTransformer:
+      class: data_processor.nodes.DataTransformer
+      inputs:
+        - input_dataset
+      outputs:
+        - output_dataset
+      node_params:
+        transformation_rule: "lambda x: x * 2"
+
+  datasets:
+    input_dataset:
+      type: kafka_stream
+    output_dataset:
+      type: kafka_stream
