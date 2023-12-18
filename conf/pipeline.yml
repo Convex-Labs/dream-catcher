@@ -1,0 +1,31 @@
+pipeline:
+  name: package-monitoring-pipeline
+
+  default_node_settings:
+    num_cpus: 0.5
+
+  nodes:
+    IoTDataSimulator:
+      class: my_package_monitoring.nodes.IoTDataSimulator
+      outputs:
+        - iot_data_stream
+      node_params:
+        device_ids: ['device1', 'device2', 'device3']
+        location_range: {'lat': (10, 50), 'lon': (-20, 20)}
+        handling_range: (0, 10)
+
+    AlertGenerator:
+      class: my_package_monitoring.nodes.AlertGenerator
+      inputs:
+        - iot_data_stream
+      outputs:
+        - alerts
+      node_params:
+        crash_threshold: 8
+        theft_latitude_threshold: 45
+
+  datasets:
+    iot_data_stream:
+      type: kafka_stream
+    alerts:
+      type: kafka_stream
