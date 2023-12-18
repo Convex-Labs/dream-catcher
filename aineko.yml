@@ -1,0 +1,5 @@
+project_name: DataProcessor
+project_slug: data_processor
+project_description: A pipeline for processing streaming data.
+pipeline_slug: data_processor_pipeline
+aineko_version: 0.2.6
