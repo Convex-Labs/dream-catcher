@@ -1,0 +1,5 @@
+project_name: 'Package Monitoring'
+project_description: 'A pipeline that monitors IoT device data from packages to generate alerts for crash and theft detection.'
+pipeline_slug: 'package-monitoring-pipeline'
+
+aineko_version: 0.2.6
