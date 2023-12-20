@@ -1,0 +1,25 @@
+pipeline:
+  name: ethereum-blockchain-ingestion
+
+  nodes:
+    EthereumDataFetcher:
+      class: ethereum_data_ingestion.nodes.EthereumDataFetcher
+      outputs:
+        - ethereum_data
+      node_params:
+        ethereum_node_http: 'https://mainnet.infura.io/v3/YOUR_INFURA_PROJECT_ID'
+
+    PostgresDataInserter:
+      class: ethereum_data_ingestion.nodes.PostgresDataInserter
+      inputs:
+        - ethereum_data
+      node_params:
+        dbname: 'your_dbname'
+        user: 'your_user'
+        password: 'your_password'
+        host: 'your_host'
+        port: 'your_port'
+
+  datasets:
+    ethereum_data:
+      type: kafka_stream
