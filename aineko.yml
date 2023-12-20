@@ -1,0 +1,5 @@
+project_name: Ethereum Data Ingestion
+project_slug: ethereum_data_ingestion
+project_description: Ingests data from the Ethereum blockchain and stores it in a PostgreSQL database.
+pipeline_slug: ethereum-blockchain-ingestion
+aineko_version: 0.2.6
