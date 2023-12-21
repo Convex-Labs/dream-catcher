@@ -1,0 +1,7 @@
+---
+project_name: Holy Event Notifier
+project_slug: holy_event_notifier
+project_description: Monitors the Drik Panchang website for important holy events and sends email notifications.
+pipeline_slug: holy_event_notifier_pipeline
+
+aineko_version: 0.2.6
