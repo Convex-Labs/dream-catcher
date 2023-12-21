@@ -1,0 +1,22 @@
+pipeline:
+  name: holy_event_monitoring_pipeline
+
+  default_node_settings:
+    num_cpus: 0.5
+
+  nodes:
+    event_monitor:
+      class: holy_event_notifier.nodes.EventMonitorNode
+      node_params:
+        url: 'https://www.drikpanchang.com/'
+        request_timeout: 10
+        email_credentials:
+          from: 'notifier@example.com'
+          to: 'recipient@example.com'
+          smtp_server: 'smtp.example.com'
+          smtp_port: 587
+          password: 'emailpassword'
+
+  datasets:
+    # Assuming the EventMonitorNode does not require any input datasets
+    # and does not produce to any output datasets
