@@ -1,0 +1,23 @@
+pipeline:
+  name: holy_event_notifier_pipeline
+
+  default_node_settings:
+    num_cpus: 0.5
+
+  nodes:
+    event_monitor:
+      class: holy_event_notifier.nodes.EventMonitorNode
+      node_params:
+        url: 'https://www.drikpanchang.com/'
+        email_credentials:
+          from: 'notifier@example.com'
+          username: 'notifier@example.com'
+          password: 'securepassword'
+          smtp_server: 'smtp.example.com'
+          smtp_port: 587
+        recipients:
+          - 'recipient1@example.com'
+          - 'recipient2@example.com'
+
+  datasets:
+    # No datasets are defined as this pipeline does not require inter-node communication
