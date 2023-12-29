@@ -1,0 +1,5 @@
+project_name: GitHub Crawler
+project_slug: github_crawler
+project_description: Crawls GitHub to create a database of users and projects.
+pipeline_slug: github-crawler-pipeline
+aineko_version: 0.2.7
