@@ -1,0 +1,5 @@
+project_name: Email Aggregator
+project_slug: email_aggregator
+project_description: Aggregates emails from Gmail into a database.
+pipeline_slug: email-aggregator-pipeline
+aineko_version: 0.2.7
