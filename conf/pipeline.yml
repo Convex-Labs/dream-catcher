@@ -1,0 +1,8 @@
+pipeline:
+  name: github-crawler-pipeline
+  nodes:
+    GitHubCrawler:
+      class: github_crawler.nodes.GitHubCrawlerNode
+      node_params:
+        database_url: 'postgresql://username:password@localhost:5432/github_db'
+        request_timeout: 10
