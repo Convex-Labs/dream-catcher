@@ -1,0 +1,26 @@
+pipeline:
+  name: email-aggregator-pipeline
+
+  nodes:
+    GmailFetcher:
+      class: email_aggregator.nodes.GmailFetcher
+      outputs:
+        - email_content
+      node_params:
+        token: 'YOUR_ACCESS_TOKEN'
+        refresh_token: 'YOUR_REFRESH_TOKEN'
+        token_uri: 'https://oauth2.googleapis.com/token'
+        client_id: 'YOUR_CLIENT_ID'
+        client_secret: 'YOUR_CLIENT_SECRET'
+        scopes: ['https://www.googleapis.com/auth/gmail.readonly']
+
+    DatabaseWriter:
+      class: email_aggregator.nodes.DatabaseWriter
+      inputs:
+        - email_content
+      node_params:
+        database_url: 'YOUR_DATABASE_URL'
+
+  datasets:
+    email_content:
+      type: in_memory_stream
