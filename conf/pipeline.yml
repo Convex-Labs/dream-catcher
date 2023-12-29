@@ -1,0 +1,18 @@
+pipeline:
+  name: github-crawler-pipeline
+
+  default_node_settings:
+    num_cpus: 1
+
+  nodes:
+    github_crawler:
+      class: github_crawler.nodes.GitHubCrawlerNode
+      node_params:
+        db_host: 'localhost'
+        db_port: 5432
+        db_user: 'crawler'
+        db_password: 'securepassword'
+        db_name: 'github_crawler_db'
+
+  datasets:
+    # Define any datasets if needed
