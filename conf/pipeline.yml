@@ -1,0 +1,24 @@
+pipeline:
+  name: movie-recommendation-pipeline
+
+  nodes:
+    MovieFetcher:
+      class: movie_tracker.nodes.MovieFetcherNode
+      outputs:
+        - new_movies
+
+    RecommendationEngine:
+      class: movie_tracker.nodes.RecommendationEngineNode
+      inputs:
+        - user_preferences
+        - new_movies
+      outputs:
+        - recommended_movies
+
+  datasets:
+    new_movies:
+      type: kafka_stream
+    user_preferences:
+      type: kafka_stream
+    recommended_movies:
+      type: kafka_stream
