@@ -1,0 +1,19 @@
+pipeline:
+  name: fibonacci-sequence-pipeline
+
+  nodes:
+    FibonacciProducer:
+      class: fibonacci_generator.nodes.FibonacciProducer
+      outputs:
+        - fibonacci_sequence
+      node_params:
+        max_iterations: 10
+
+    FibonacciConsumer:
+      class: fibonacci_generator.nodes.FibonacciConsumer
+      inputs:
+        - fibonacci_sequence
+
+  datasets:
+    fibonacci_sequence:
+      type: kafka_stream
