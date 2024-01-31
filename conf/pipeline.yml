@@ -1,0 +1,27 @@
+pipeline:
+  name: movie_recommendation_pipeline
+
+  nodes:
+    MovieFetcher:
+      class: movie_tracker.nodes.MovieFetcherNode
+      outputs:
+        - new_movies
+      node_params:
+        api_key: '{$MOVIE_DB_API_KEY}'
+
+    RecommendationEngine:
+      class: movie_tracker.nodes.RecommendationEngineNode
+      inputs:
+        - new_movies
+      outputs:
+        - recommended_movies
+      node_params:
+        user_preferences:
+          genre: 'Action'
+          minimum_rating: 7
+
+  datasets:
+    new_movies:
+      type: kafka_stream
+    recommended_movies:
+      type: kafka_stream
