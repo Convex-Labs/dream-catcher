@@ -1,0 +1,5 @@
+project_name: Movie Tracker
+project_slug: movie_tracker
+project_description: Tracks new movie releases and provides recommendations based on user preferences.
+pipeline_slug: movie_recommendation_pipeline
+aineko_version: 0.2.7
