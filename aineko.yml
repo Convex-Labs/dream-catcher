@@ -1,0 +1,5 @@
+project_name: InspirationalQuotes
+project_slug: inspirational_quotes
+project_description: A pipeline to generate inspirational quotes.
+pipeline_slug: inspirational_quotes_pipeline
+aineko_version: 0.3.0
