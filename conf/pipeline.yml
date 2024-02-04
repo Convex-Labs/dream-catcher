@@ -1,0 +1,12 @@
+pipeline:
+  name: inspirational_quotes_pipeline
+
+  nodes:
+    quote_generator:
+      class: inspirational_quotes.nodes.QuoteGeneratorNode
+      outputs:
+        - inspirational_quote
+
+  datasets:
+    inspirational_quote:
+      type: kafka_stream
