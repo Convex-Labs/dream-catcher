@@ -1,0 +1,30 @@
+pipeline:
+  name: log-classification-pipeline
+
+  nodes:
+    LogProducer:
+      class: log_classifier.nodes.LogProducerNode
+      outputs:
+        - logs
+
+    LogClassifier:
+      class: log_classifier.nodes.LogClassifierNode
+      inputs:
+        - logs
+      outputs:
+        - classified_logs
+
+    LogAction:
+      class: log_classifier.nodes.LogActionNode
+      inputs:
+        - classified_logs
+      outputs:
+        - actions
+
+  datasets:
+    logs:
+      type: kafka_stream
+    classified_logs:
+      type: kafka_stream
+    actions:
+      type: kafka_stream
