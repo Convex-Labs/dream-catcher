@@ -1,0 +1,6 @@
+project_name: NavierStokesSimulator
+project_slug: navier_stokes_simulator
+project_description: Simulates the Navier-Stokes equation for fluid dynamics.
+pipeline_slug: navier-stokes-simulation
+
+aineko_version: 0.3.1
