@@ -1,0 +1,37 @@
+pipeline:
+  name: restaurant-recommender-pipeline
+
+  nodes:
+    YelpDataFetcher:
+      class: restaurant_recommender.nodes.YelpDataFetcher
+      outputs:
+        - restaurant_data
+      node_params:
+        yelp_api_key: 'your-yelp-api-key'
+        request_timeout: 5
+
+    FaissIndexer:
+      class: restaurant_recommender.nodes.FaissIndexer
+      inputs:
+        - restaurant_data
+      outputs:
+        - enriched_data
+      node_params:
+        index_path: 'path/to/your/faiss/index'
+
+    LLMRecommender:
+      class: restaurant_recommender.nodes.LLMRecommender
+      inputs:
+        - enriched_data
+      outputs:
+        - recommendations
+
+  datasets:
+    location_input:
+      type: kafka_stream
+    restaurant_data:
+      type: kafka_stream
+    enriched_data:
+      type: kafka_stream
+    recommendations:
+      type: kafka_stream
