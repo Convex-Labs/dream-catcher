@@ -1,0 +1,24 @@
+pipeline:
+  name: chatmath-pipeline
+  nodes:
+    chat_gpt:
+      class: chatmath.nodes.ChatGPTNode
+      inputs:
+        - input_prompt
+      outputs:
+        - gpt_output
+    math_operation:
+      class: chatmath.nodes.MathNode
+      inputs:
+        - math_expression
+      outputs:
+        - math_output
+  datasets:
+    input_prompt:
+      type: kafka_stream
+    gpt_output:
+      type: kafka_stream
+    math_expression:
+      type: kafka_stream
+    math_output:
+      type: kafka_stream
