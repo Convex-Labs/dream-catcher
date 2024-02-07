@@ -1,0 +1,43 @@
+pipeline:
+  name: gpt3-template-generator
+
+  nodes:
+    GitHubDocFetcher:
+      class: aineko_dream.nodes.GitHubDocFetcher
+      inputs:
+        - github_event
+      outputs:
+        - document
+      node_params:
+        organization: "aineko-dev"
+        repo: "aineko"
+        branch: "documentation"
+        file_path: "/docs/"
+    OpenAIClient:
+      class: aineko_dream.nodes.OpenAIClient
+      inputs:
+        - generated_prompt
+      outputs:
+        - llm_response
+      node_params:
+        model: "gpt-3.5-turbo-16k"
+        max_tokens: 4000
+        temperature: 0.1
+    SecurityEvaluation:
+      class: aineko_dream.nodes.SecurityEvaluation
+      inputs:
+        - llm_response
+      outputs:
+        - evaluation_result
+
+  datasets:
+    github_event:
+      type: kafka_stream
+    document:
+      type: kafka_stream
+    generated_prompt:
+      type: kafka_stream
+    llm_response:
+      type: kafka_stream
+    evaluation_result:
+      type: kafka_stream
