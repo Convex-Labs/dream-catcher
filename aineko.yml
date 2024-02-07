@@ -1,0 +1,5 @@
+project_name: Restaurant Recommender
+project_slug: restaurant_recommender
+project_description: AI agent for restaurant recommendations using Yelp API and FAISS.
+pipeline_slug: restaurant-recommender-pipeline
+aineko_version: 0.3.1
