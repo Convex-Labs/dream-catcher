@@ -1,0 +1,19 @@
+pipeline:
+  name: navier-stokes-simulation
+
+  nodes:
+    NavierStokesSimulator:
+      class: navier_stokes_simulator.nodes.NavierStokesSimulatorNode
+      inputs:
+        - input_data
+      outputs:
+        - output_data
+      node_params:
+        viscosity: 1.0
+        density: 1.0
+
+  datasets:
+    input_data:
+      type: kafka_stream
+    output_data:
+      type: kafka_stream
