@@ -1,0 +1,5 @@
+project_name: ChatMath
+project_slug: chatmath
+project_description: An Aineko pipeline that integrates ChatGPT with mathematical operations.
+pipeline_slug: chatmath-pipeline
+aineko_version: 0.3.1
