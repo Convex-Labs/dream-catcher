@@ -1,0 +1,5 @@
+project_name: Log Urgency Classifier
+project_slug: log_urgency_classifier
+project_description: Classifies logs into urgency categories and takes action based on the category.
+pipeline_slug: log-urgency-pipeline
+aineko_version: 0.3.1
