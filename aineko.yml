@@ -1,0 +1,5 @@
+project_name: Aineko Dream
+project_slug: aineko_dream
+project_description: Real-time code generation with ChatGPT
+pipeline_slug: gpt3-template-generator
+aineko_version: 0.3.1
