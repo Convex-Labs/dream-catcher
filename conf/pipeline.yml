@@ -1,0 +1,26 @@
+pipeline:
+  name: log-urgency-pipeline
+
+  nodes:
+    LogProducer:
+      class: log_urgency_classifier.nodes.LogProducer
+      outputs:
+        - raw_logs
+
+    LogClassifier:
+      class: log_urgency_classifier.nodes.LogClassifier
+      inputs:
+        - raw_logs
+      outputs:
+        - classified_logs
+
+    UrgencyAction:
+      class: log_urgency_classifier.nodes.UrgencyAction
+      inputs:
+        - classified_logs
+
+  datasets:
+    raw_logs:
+      type: kafka_stream
+    classified_logs:
+      type: kafka_stream
