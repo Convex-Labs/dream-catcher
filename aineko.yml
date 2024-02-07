@@ -1,0 +1,6 @@
+project_name: Log Consolidator
+project_slug: log_consolidator
+project_description: Consolidates logs from various sources and categorizes them by urgency.
+pipeline_slug: log_alert_pipeline
+
+aineko_version: 0.3.1
