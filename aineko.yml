@@ -1,0 +1,5 @@
+project_name: ChatGPT Pipeline
+project_slug: chatgpt_pipeline
+project_description: A pipeline that interacts with ChatGPT to generate responses.
+pipeline_slug: chatgpt-pipeline
+aineko_version: 0.3.1
