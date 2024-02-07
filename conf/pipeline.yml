@@ -1,0 +1,18 @@
+pipeline:
+  name: chatgpt-pipeline
+
+  nodes:
+    chatgpt_node:
+      class: chatgpt_pipeline.nodes.ChatGPTNode
+      inputs:
+        - input_prompt
+      outputs:
+        - gpt_response
+      node_params:
+        openai_api_key: '{$OPENAI_API_KEY}'
+
+  datasets:
+    input_prompt:
+      type: kafka_stream
+    gpt_response:
+      type: kafka_stream
