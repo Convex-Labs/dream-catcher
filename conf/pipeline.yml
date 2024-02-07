@@ -1,0 +1,20 @@
+pipeline:
+  name: log_alert_pipeline
+  nodes:
+    LogCategorizer:
+      class: log_alert.nodes.LogCategorizer
+      inputs:
+        - log_input
+      outputs:
+        - categorized_log
+    SlackNotifier:
+      class: log_alert.nodes.SlackNotifier
+      inputs:
+        - categorized_log
+      node_params:
+        slack_webhook_url: 'https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX'
+  datasets:
+    log_input:
+      type: kafka_stream
+    categorized_log:
+      type: kafka_stream
