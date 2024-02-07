@@ -1,0 +1,26 @@
+pipeline:
+  name: log_alert_pipeline
+
+  nodes:
+    LogCollector:
+      class: log_consolidator.nodes.LogCollector
+      outputs:
+        - raw_logs
+
+    LogCategorizer:
+      class: log_consolidator.nodes.LogCategorizer
+      inputs:
+        - raw_logs
+      outputs:
+        - categorized_logs
+
+    SlackNotifier:
+      class: log_consolidator.nodes.SlackNotifier
+      inputs:
+        - categorized_logs
+
+  datasets:
+    raw_logs:
+      type: kafka_stream
+    categorized_logs:
+      type: kafka_stream
