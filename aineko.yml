@@ -1,0 +1,5 @@
+project_name: DataCategorizer
+project_slug: data_categorizer
+project_description: Ingests data from a database and categorizes it using machine learning.
+pipeline_slug: data_categorization_pipeline
+aineko_version: 0.3.1
