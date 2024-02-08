@@ -1,0 +1,21 @@
+pipeline:
+  name: data_categorization_pipeline
+
+  nodes:
+    DataIngestion:
+      class: data_categorizer.nodes.DataIngestionNode
+      outputs:
+        - raw_data
+
+    DataCategorization:
+      class: data_categorizer.nodes.DataCategorizationNode
+      inputs:
+        - raw_data
+      outputs:
+        - categorized_data
+
+  datasets:
+    raw_data:
+      type: kafka_stream
+    categorized_data:
+      type: kafka_stream
