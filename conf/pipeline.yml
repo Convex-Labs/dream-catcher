@@ -1,0 +1,18 @@
+pipeline:
+  name: chatmath-pipeline
+  default_node_settings:
+    num_cpus: 1
+  nodes:
+    math_chat:
+      class: chatmath.nodes.MathChatNode
+      inputs:
+        - math_problems
+      outputs:
+        - math_solutions
+      node_params:
+        prompt: 'Solve the following math problem: '
+  datasets:
+    math_problems:
+      type: kafka_stream
+    math_solutions:
+      type: kafka_stream
