@@ -1,0 +1,35 @@
+pipeline:
+  name: transcript-summarization-pipeline
+
+  nodes:
+    FastAPIServer:
+      class: transcript_summarizer.nodes.FastAPIServerNode
+
+    TranscriptFetcher:
+      class: transcript_summarizer.nodes.TranscriptFetcherNode
+      outputs:
+        - transcript
+
+    PromptValidator:
+      class: transcript_summarizer.nodes.PromptValidatorNode
+      inputs:
+        - prompt
+      outputs:
+        - validation_result
+
+    TranscriptSummarizer:
+      class: transcript_summarizer.nodes.TranscriptSummarizerNode
+      inputs:
+        - transcript
+      outputs:
+        - summary
+
+  datasets:
+    transcript:
+      type: kafka_stream
+    prompt:
+      type: kafka_stream
+    validation_result:
+      type: kafka_stream
+    summary:
+      type: kafka_stream
