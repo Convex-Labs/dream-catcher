@@ -1,0 +1,5 @@
+project_name: Transcript Summarizer
+project_slug: transcript_summarizer
+project_description: An Aineko pipeline that fetches YouTube transcripts, validates user prompts, and summarizes the content using OpenAI and Langchain.
+pipeline_slug: transcript-summarization-pipeline
+aineko_version: 0.3.2
