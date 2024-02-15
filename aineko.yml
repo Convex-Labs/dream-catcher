@@ -1,0 +1,5 @@
+project_name: Sales Funnel Automation
+project_slug: sales_funnel_automation
+project_description: Automates the sales funnel process using AI.
+pipeline_slug: sales_funnel_pipeline
+aineko_version: 0.3.2
