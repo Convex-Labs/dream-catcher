@@ -1,0 +1,5 @@
+project_name: Sentiment Analyzer
+project_slug: sentiment_analyzer
+project_description: Analyzes sentiment of text and categorizes it as positive, negative, or neutral.
+pipeline_slug: sentiment-analysis-pipeline
+aineko_version: 0.3.2
