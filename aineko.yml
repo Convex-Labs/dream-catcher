@@ -1,0 +1,5 @@
+project_name: Math Solver
+project_slug: math_solver
+project_description: Solves basic math problems
+pipeline_slug: math_solver_pipeline
+aineko_version: 0.3.2
