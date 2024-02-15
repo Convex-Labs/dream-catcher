@@ -1,0 +1,20 @@
+pipeline:
+  name: codegen_pipeline
+
+  nodes:
+    code_generator:
+      class: code_generator.nodes.CodeGeneratorNode
+      inputs:
+        - user_prompt
+      outputs:
+        - generated_code
+      node_params:
+        template: 'def {function_name}({parameters}):
+            {logic}
+            return {return_value}'
+
+  datasets:
+    user_prompt:
+      type: kafka_stream
+    generated_code:
+      type: kafka_stream
