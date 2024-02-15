@@ -1,0 +1,16 @@
+pipeline:
+  name: sentiment-analysis-pipeline
+
+  nodes:
+    sentiment_analyzer:
+      class: sentiment_analyzer.nodes.SentimentAnalyzerNode
+      inputs:
+        - llm_output
+      outputs:
+        - sentiment_analysis
+
+  datasets:
+    llm_output:
+      type: kafka_stream
+    sentiment_analysis:
+      type: kafka_stream
