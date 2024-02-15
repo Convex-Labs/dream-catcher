@@ -1,0 +1,5 @@
+project_name: TimeSeriesSolver
+project_slug: time_series_solver
+project_description: Solves time series problems using ARIMA and TBATS models.
+pipeline_slug: time_series_pipeline
+aineko_version: 0.3.2
