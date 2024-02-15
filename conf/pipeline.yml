@@ -1,0 +1,16 @@
+pipeline:
+  name: math_solver_pipeline
+
+  nodes:
+    MathSolver:
+      class: math_solver.nodes.MathSolverNode
+      inputs:
+        - math_problem
+      outputs:
+        - solution
+
+  datasets:
+    math_problem:
+      type: kafka_stream
+    solution:
+      type: kafka_stream
