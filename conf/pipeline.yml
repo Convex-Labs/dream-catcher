@@ -1,0 +1,13 @@
+pipeline:
+  name: slackbot_pipeline
+
+  nodes:
+    slack_bot:
+      class: slackbot.nodes.SlackBotNode
+      node_params:
+        slack_token: {$SLACK_TOKEN}
+        slack_channel: 'general'
+
+  datasets:
+    slack_messages:
+      type: kafka_stream
