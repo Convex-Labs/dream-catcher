@@ -1,0 +1,5 @@
+project_name: TestProject
+project_slug: test_project
+project_description: A simple Aineko pipeline for testing purposes.
+pipeline_slug: test_pipeline
+aineko_version: 0.3.2
