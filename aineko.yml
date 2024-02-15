@@ -1,0 +1,5 @@
+project_name: LLM Fine-Tuner
+project_slug: llm_fine_tuner
+project_description: A pipeline to fine-tune a large language model.
+pipeline_slug: llm-fine-tuning-pipeline
+aineko_version: 0.3.2
