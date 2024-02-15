@@ -1,0 +1,5 @@
+project_name: SyntheticLogStream
+project_slug: synthetic_log_stream
+project_description: A pipeline that processes a synthetic log stream.
+pipeline_slug: synthetic-log-stream-pipeline
+aineko_version: 0.3.2
