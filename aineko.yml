@@ -1,0 +1,5 @@
+project_name: Code Generator
+project_slug: code_generator
+project_description: Generates code based on user prompts
+pipeline_slug: codegen_pipeline
+aineko_version: 0.3.2
