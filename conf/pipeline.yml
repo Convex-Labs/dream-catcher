@@ -1,0 +1,17 @@
+pipeline:
+  name: cool_pipeline
+
+  default_node_settings:
+    num_cpus: 0.5
+
+  nodes:
+    CoolNode:
+      class: cool_project.nodes.CoolNode
+      outputs:
+        - cool_output
+      node_params:
+        initial_state: 0
+
+  datasets:
+    cool_output:
+      type: kafka_stream
