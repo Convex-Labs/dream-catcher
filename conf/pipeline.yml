@@ -1,0 +1,24 @@
+pipeline:
+  name: time_series_pipeline
+
+  default_node_settings:
+    num_cpus: 1
+
+  nodes:
+    TimeSeriesPredictor:
+      class: time_series_solver.nodes.TimeSeriesPredictor
+      inputs:
+        - cleaned_historical_demand
+      outputs:
+        - forecasted_demand
+      node_params:
+        sample_period: 7
+        sample_freq_hours: 'H'
+        model_type: 'ARIMA'
+        timeseries_data_output_png: 'timeseries_prediction.png'
+
+  datasets:
+    cleaned_historical_demand:
+      type: kafka_stream
+    forecasted_demand:
+      type: kafka_stream
