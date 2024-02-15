@@ -1,0 +1,22 @@
+pipeline:
+  name: codegen_pipeline
+  nodes:
+    PromptHandler:
+      class: codegen_assistant.nodes.PromptHandler
+      inputs:
+        - user_prompt
+      outputs:
+        - generated_code
+    CodeValidator:
+      class: codegen_assistant.nodes.CodeValidator
+      inputs:
+        - generated_code
+      outputs:
+        - validation_result
+  datasets:
+    user_prompt:
+      type: kafka_stream
+    generated_code:
+      type: kafka_stream
+    validation_result:
+      type: kafka_stream
