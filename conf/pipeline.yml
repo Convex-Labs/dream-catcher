@@ -1,0 +1,12 @@
+pipeline:
+  name: surprise_pipeline
+
+  nodes:
+    surprise_node:
+      class: surprise_generator.nodes.SurpriseNode
+      outputs:
+        - surprise_output
+
+  datasets:
+    surprise_output:
+      type: kafka_stream
