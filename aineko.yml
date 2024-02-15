@@ -1,0 +1,5 @@
+project_name: Image Processor
+project_slug: image_processor
+project_description: A pipeline for real-time image processing.
+pipeline_slug: image-processing-pipeline
+aineko_version: 0.3.2
