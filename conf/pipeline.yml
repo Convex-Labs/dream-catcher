@@ -1,0 +1,21 @@
+pipeline:
+  name: synthetic-log-stream-pipeline
+
+  nodes:
+    LogGenerator:
+      class: synthetic_log_stream.nodes.LogGeneratorNode
+      outputs:
+        - synthetic_log_stream
+
+    LogProcessor:
+      class: synthetic_log_stream.nodes.LogProcessorNode
+      inputs:
+        - synthetic_log_stream
+      outputs:
+        - processed_log_stream
+
+  datasets:
+    synthetic_log_stream:
+      type: kafka_stream
+    processed_log_stream:
+      type: kafka_stream
