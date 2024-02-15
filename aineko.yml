@@ -1,0 +1,5 @@
+project_name: CoolProject
+project_slug: cool_project
+project_description: A project that does something cool
+pipeline_slug: cool-pipeline
+aineko_version: 0.3.2
