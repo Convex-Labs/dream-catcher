@@ -1,0 +1,22 @@
+pipeline:
+  name: synthetic-log-streamer
+
+  nodes:
+    LogGenerator:
+      class: synthetic_log_streamer.nodes.SyntheticLogGenerator
+      outputs:
+        - synthetic_log
+      node_params:
+        log_interval: 5
+    OpenAIInteractor:
+      class: synthetic_log_streamer.nodes.OpenAIInteractor
+      inputs:
+        - synthetic_log
+      outputs:
+        - log_analysis
+
+  datasets:
+    synthetic_log:
+      type: kafka_stream
+    log_analysis:
+      type: kafka_stream
