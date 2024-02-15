@@ -1,0 +1,16 @@
+pipeline:
+  name: chatbot_pipeline
+
+  nodes:
+    chatbot:
+      class: chatbot.nodes.ChatbotNode
+      inputs:
+        - input_dataset
+      outputs:
+        - output_dataset
+
+  datasets:
+    input_dataset:
+      type: kafka_stream
+    output_dataset:
+      type: kafka_stream
