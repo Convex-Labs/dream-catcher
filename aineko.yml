@@ -1,0 +1,5 @@
+project_name: HelloWorld
+project_slug: hello_world
+project_description: A simple pipeline that outputs 'Hello, World!'
+pipeline_slug: hello-world-pipeline
+aineko_version: 0.3.2
