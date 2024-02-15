@@ -1,0 +1,5 @@
+project_name: Surprise Generator
+project_slug: surprise_generator
+project_description: Generates random surprises for users
+pipeline_slug: surprise_pipeline
+aineko_version: 0.3.2
