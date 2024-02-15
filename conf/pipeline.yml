@@ -1,0 +1,26 @@
+pipeline:
+  name: sales_funnel_pipeline
+
+  nodes:
+    CRMDataFetcher:
+      class: sales_funnel_automation.nodes.CRMDataFetcher
+      outputs:
+        - crm_data
+
+    EmailComposer:
+      class: sales_funnel_automation.nodes.EmailComposer
+      inputs:
+        - crm_data
+      outputs:
+        - composed_email
+
+    EmailSender:
+      class: sales_funnel_automation.nodes.EmailSender
+      inputs:
+        - composed_email
+
+  datasets:
+    crm_data:
+      type: kafka_stream
+    composed_email:
+      type: kafka_stream
