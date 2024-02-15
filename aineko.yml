@@ -1,0 +1,5 @@
+project_name: CodeGenAssistant
+project_slug: codegen_assistant
+project_description: An Aineko pipeline that generates code based on user prompts.
+pipeline_slug: codegen_pipeline
+aineko_version: 0.3.2
