@@ -1,0 +1,12 @@
+pipeline:
+  name: cool-pipeline
+
+  nodes:
+    CoolNode:
+      class: cool_project.nodes.CoolNode
+      node_params:
+        initial_state: 0
+
+  datasets:
+    cool_dataset:
+      type: kafka_stream
