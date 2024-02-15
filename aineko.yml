@@ -1,0 +1,5 @@
+project_name: SlackBot
+project_slug: slackbot
+project_description: A bot that interacts with users on Slack.
+pipeline_slug: slackbot_pipeline
+aineko_version: 0.3.2
