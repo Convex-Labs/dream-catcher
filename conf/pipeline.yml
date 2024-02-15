@@ -1,0 +1,16 @@
+pipeline:
+  name: test_pipeline
+
+  nodes:
+    test_node:
+      class: test_project.nodes.TestNode
+      inputs:
+        - test_input_dataset
+      outputs:
+        - test_output_dataset
+
+  datasets:
+    test_input_dataset:
+      type: kafka_stream
+    test_output_dataset:
+      type: kafka_stream
