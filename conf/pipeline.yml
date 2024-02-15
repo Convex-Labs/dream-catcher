@@ -1,0 +1,19 @@
+pipeline:
+  name: powerful_app_pipeline
+
+  default_node_settings:
+    num_cpus: 1
+
+  nodes:
+    data_processor:
+      class: powerful_application.nodes.DataProcessorNode
+      inputs:
+        - input_dataset
+      outputs:
+        - output_dataset
+
+  datasets:
+    input_dataset:
+      type: kafka_stream
+    output_dataset:
+      type: kafka_stream
