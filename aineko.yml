@@ -1,0 +1,5 @@
+project_name: Magic Generator
+project_slug: magic_generator
+project_description: A pipeline that generates magical outputs based on user inputs.
+pipeline_slug: magic-generator-pipeline
+aineko_version: 0.3.2
