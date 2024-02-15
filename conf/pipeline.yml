@@ -1,0 +1,15 @@
+pipeline:
+  name: hello-world-pipeline
+
+  default_node_settings:
+    num_cpus: 0.1
+
+  nodes:
+    hello_world:
+      class: hello_world.nodes.HelloWorldNode
+      outputs:
+        - output
+
+  datasets:
+    output:
+      type: kafka_stream
