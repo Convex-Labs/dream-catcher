@@ -1,0 +1,5 @@
+project_name: Powerful Application
+project_slug: powerful_application
+project_description: A robust and efficient data processing application.
+pipeline_slug: powerful_app_pipeline
+aineko_version: 0.3.2
