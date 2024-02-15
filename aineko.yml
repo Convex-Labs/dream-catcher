@@ -1,0 +1,5 @@
+project_name: Something Awesome
+project_slug: something_awesome
+project_description: An Aineko pipeline that does something awesome.
+pipeline_slug: something-awesome-pipeline
+aineko_version: 0.3.2
