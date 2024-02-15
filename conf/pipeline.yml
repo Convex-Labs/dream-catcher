@@ -1,0 +1,26 @@
+pipeline:
+  name: aineko-dream-pipeline
+
+  nodes:
+    GitHubDocFetcher:
+      class: aineko_dream.nodes.GitHubDocFetcher
+      outputs:
+        - document
+      node_params:
+        repo: 'aineko-dev/aineko-dream'
+        file_path: 'documentation/project_description.md'
+
+    LLMQueryNode:
+      class: aineko_dream.nodes.LLMQueryNode
+      inputs:
+        - prompt
+      outputs:
+        - response
+
+    QualityAssuranceNode:
+      class: aineko_dream.nodes.QualityAssuranceNode
+      inputs:
+        - response
+      outputs:
+        - final_output
+        - prompt
