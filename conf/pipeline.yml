@@ -1,0 +1,19 @@
+pipeline:
+  name: magic-generator-pipeline
+
+  default_node_settings:
+    num_cpus: 0.5
+
+  nodes:
+    magic_node:
+      class: magic_generator.nodes.MagicNode
+      inputs:
+        - user_input
+      outputs:
+        - magical_output
+
+  datasets:
+    user_input:
+      type: kafka_stream
+    magical_output:
+      type: kafka_stream
