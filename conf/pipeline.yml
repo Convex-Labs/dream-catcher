@@ -1,0 +1,10 @@
+pipeline:
+  name: hello-world-pipeline
+  nodes:
+    hello_world_node:
+      class: hello_world.nodes.HelloWorldNode
+      outputs:
+        - output
+  datasets:
+    output:
+      type: kafka_stream
