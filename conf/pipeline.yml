@@ -1,0 +1,26 @@
+pipeline:
+  name: llm-fine-tuning-pipeline
+
+  nodes:
+    DataPreparation:
+      class: llm_fine_tuner.nodes.DataPreparationNode
+      outputs:
+        - prepared_data
+
+    ModelTraining:
+      class: llm_fine_tuner.nodes.ModelTrainingNode
+      inputs:
+        - prepared_data
+      outputs:
+        - trained_model
+
+    ModelEvaluation:
+      class: llm_fine_tuner.nodes.ModelEvaluationNode
+      inputs:
+        - trained_model
+
+  datasets:
+    prepared_data:
+      type: kafka_stream
+    trained_model:
+      type: kafka_stream
