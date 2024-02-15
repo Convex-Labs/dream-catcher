@@ -1,0 +1,5 @@
+project_name: Synthetic Log Streamer
+project_slug: synthetic_log_streamer
+project_description: A pipeline that processes a synthetic log stream and interacts with OpenAI.
+pipeline_slug: synthetic-log-streamer
+aineko_version: 0.3.2
