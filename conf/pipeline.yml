@@ -1,0 +1,21 @@
+pipeline:
+  name: party_planning_pipeline
+
+  default_node_settings:
+    num_cpus: 1
+
+  nodes:
+    PartyPlanner:
+      class: party_planner.nodes.PartyPlannerNode
+      inputs:
+        - party_requests
+      outputs:
+        - party_confirmations
+      node_params:
+        party_data_file: 'party_data.json'
+
+  datasets:
+    party_requests:
+      type: kafka_stream
+    party_confirmations:
+      type: kafka_stream
