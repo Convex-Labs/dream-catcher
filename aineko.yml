@@ -1,0 +1,5 @@
+project_name: Party Planner
+project_slug: party_planner
+project_description: An application to plan and organize parties.
+pipeline_slug: party_planning_pipeline
+aineko_version: 0.3.2
