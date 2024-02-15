@@ -1,0 +1,5 @@
+project_name: Aineko Dream
+project_slug: aineko_dream
+project_description: Real-time code generation with LLM quality assurance
+pipeline_slug: aineko-dream-pipeline
+aineko_version: 0.3.2
