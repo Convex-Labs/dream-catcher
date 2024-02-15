@@ -1,0 +1,33 @@
+pipeline:
+  name: image-processing-pipeline
+
+  nodes:
+    ImageReader:
+      class: image_processor.nodes.ImageReader
+      outputs:
+        - raw_images
+    ImageResizer:
+      class: image_processor.nodes.ImageResizer
+      inputs:
+        - raw_images
+      outputs:
+        - resized_images
+      node_params:
+        width: 1280
+        height: 720
+    ImageGrayscaleConverter:
+      class: image_processor.nodes.ImageGrayscaleConverter
+      inputs:
+        - resized_images
+      outputs:
+        - grayscale_images
+
+  datasets:
+    input_images:
+      type: kafka_stream
+    raw_images:
+      type: kafka_stream
+    resized_images:
+      type: kafka_stream
+    grayscale_images:
+      type: kafka_stream
