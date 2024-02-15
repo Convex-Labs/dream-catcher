@@ -1,0 +1,14 @@
+pipeline:
+  name: something-awesome-pipeline
+
+  nodes:
+    AwesomeNode:
+      class: something_awesome.nodes.AwesomeNode
+      outputs:
+        - awesome_output
+      node_params:
+        initial_state: 'awesome'
+
+  datasets:
+    awesome_output:
+      type: kafka_stream
