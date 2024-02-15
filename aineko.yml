@@ -1,0 +1,5 @@
+project_name: Chatbot
+project_slug: chatbot
+project_description: A simple chatbot using Aineko framework
+pipeline_slug: chatbot_pipeline
+aineko_version: 0.3.2
